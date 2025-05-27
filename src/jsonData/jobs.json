@@ -1,0 +1,214 @@
+[
+  {
+    "id": 1,
+    "title": "Senior Frontend Developer",
+    "company": "TechCorp Solutions",
+    "location": "San Francisco, CA",
+    "type": "Full-time",
+    "salary": "$120,000 - $150,000",
+    "postedDate": "2024-01-15",
+    "description": "We are looking for an experienced Frontend Developer to join our dynamic team. You will be responsible for building user-facing features using React.js and modern web technologies.",
+    "requirements": [
+      "5+ years React experience",
+      "TypeScript proficiency",
+      "UI/UX design skills"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": false
+  },
+  {
+    "id": 2,
+    "title": "Product Marketing Manager",
+    "company": "InnovateLabs",
+    "location": "New York, NY",
+    "type": "Full-time",
+    "salary": "$90,000 - $120,000",
+    "postedDate": "2024-01-14",
+    "description": "Join our marketing team to drive product adoption and growth. You'll work closely with product and sales teams to develop go-to-market strategies.",
+    "requirements": [
+      "3+ years marketing experience",
+      "B2B SaaS background",
+      "Analytics skills"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=100&h=100&fit=crop&crop=center",
+    "isRemote": true,
+    "isSaved": true
+  },
+  {
+    "id": 3,
+    "title": "UX/UI Designer",
+    "company": "DesignStudio Pro",
+    "location": "Austin, TX",
+    "type": "Contract",
+    "salary": "$70 - $90 /hour",
+    "postedDate": "2024-01-13",
+    "description": "Create intuitive and beautiful user experiences for our web and mobile applications. Collaborate with developers and product managers to bring designs to life.",
+    "requirements": [
+      "Portfolio required",
+      "Figma expertise",
+      "User research experience"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": false
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "company": "DataDriven Inc",
+    "location": "Seattle, WA",
+    "type": "Full-time",
+    "salary": "$130,000 - $160,000",
+    "postedDate": "2024-01-12",
+    "description": "Analyze complex datasets to drive business insights and build predictive models. Work with machine learning algorithms and statistical analysis.",
+    "requirements": [
+      "PhD in related field",
+      "Python/R proficiency",
+      "ML experience"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=100&h=100&fit=crop&crop=center",
+    "isRemote": true,
+    "isSaved": false
+  },
+  {
+    "id": 5,
+    "title": "Sales Development Representative",
+    "company": "GrowthCorp",
+    "location": "Chicago, IL",
+    "type": "Full-time",
+    "salary": "$50,000 - $70,000 + Commission",
+    "postedDate": "2024-01-11",
+    "description": "Generate new business opportunities through outbound prospecting and lead qualification. Work closely with the sales team to drive revenue growth.",
+    "requirements": [
+      "1+ years sales experience",
+      "CRM proficiency",
+      "Communication skills"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": true
+  },
+  {
+    "id": 6,
+    "title": "DevOps Engineer",
+    "company": "CloudTech Systems",
+    "location": "Denver, CO",
+    "type": "Full-time",
+    "salary": "$110,000 - $140,000",
+    "postedDate": "2024-01-10",
+    "description": "Manage cloud infrastructure and deployment pipelines. Ensure system reliability, scalability, and security across our platform.",
+    "requirements": [
+      "AWS/Azure experience",
+      "Docker/Kubernetes",
+      "CI/CD pipelines"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=100&h=100&fit=crop&crop=center",
+    "isRemote": true,
+    "isSaved": false
+  },
+  {
+    "id": 7,
+    "title": "Financial Analyst",
+    "company": "FinanceFirst",
+    "location": "Boston, MA",
+    "type": "Full-time",
+    "salary": "$75,000 - $95,000",
+    "postedDate": "2024-01-09",
+    "description": "Analyze financial data and create reports to support business decision-making. Work with budgeting, forecasting, and financial modeling.",
+    "requirements": ["Finance degree", "Excel expertise", "Analytical skills"],
+    "companyLogo": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": false
+  },
+  {
+    "id": 8,
+    "title": "Content Marketing Specialist",
+    "company": "ContentCrafters",
+    "location": "Los Angeles, CA",
+    "type": "Part-time",
+    "salary": "$40,000 - $55,000",
+    "postedDate": "2024-01-08",
+    "description": "Create engaging content across multiple channels to drive brand awareness and lead generation. Manage social media and blog content.",
+    "requirements": [
+      "Writing portfolio",
+      "SEO knowledge",
+      "Social media experience"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=100&h=100&fit=crop&crop=center",
+    "isRemote": true,
+    "isSaved": true
+  },
+  {
+    "id": 9,
+    "title": "Software Engineer",
+    "company": "StartupXYZ",
+    "location": "Miami, FL",
+    "type": "Full-time",
+    "salary": "$95,000 - $125,000",
+    "postedDate": "2024-01-07",
+    "description": "Build scalable web applications using modern technologies. Work in an agile environment with a small, dynamic team.",
+    "requirements": [
+      "3+ years development",
+      "Full-stack experience",
+      "Startup mindset"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": false
+  },
+  {
+    "id": 10,
+    "title": "HR Business Partner",
+    "company": "PeopleFirst Corp",
+    "location": "Atlanta, GA",
+    "type": "Full-time",
+    "salary": "$80,000 - $100,000",
+    "postedDate": "2024-01-06",
+    "description": "Partner with business leaders to develop HR strategies that support organizational goals. Handle employee relations and talent development.",
+    "requirements": [
+      "HR degree/certification",
+      "5+ years experience",
+      "Leadership skills"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": false
+  },
+  {
+    "id": 11,
+    "title": "Mobile App Developer",
+    "company": "AppInnovators",
+    "location": "Portland, OR",
+    "type": "Contract",
+    "salary": "$80 - $120 /hour",
+    "postedDate": "2024-01-05",
+    "description": "Develop native mobile applications for iOS and Android platforms. Work with cross-functional teams to deliver high-quality mobile experiences.",
+    "requirements": [
+      "React Native/Flutter",
+      "Mobile UI/UX",
+      "App Store experience"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=100&h=100&fit=crop&crop=center",
+    "isRemote": true,
+    "isSaved": false
+  },
+  {
+    "id": 12,
+    "title": "Cybersecurity Analyst",
+    "company": "SecureNet Solutions",
+    "location": "Washington, DC",
+    "type": "Full-time",
+    "salary": "$105,000 - $135,000",
+    "postedDate": "2024-01-04",
+    "description": "Monitor and analyze security threats, implement security measures, and respond to incidents. Ensure compliance with security standards.",
+    "requirements": [
+      "Security certifications",
+      "Network security",
+      "Incident response"
+    ],
+    "companyLogo": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=100&h=100&fit=crop&crop=center",
+    "isRemote": false,
+    "isSaved": true
+  }
+]
