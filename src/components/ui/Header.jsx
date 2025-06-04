@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Icon from '../AppIcon';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Icon from "../AppIcon";
+import logo from "../../assests/images/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,10 +23,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/home-page" className="flex items-center">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-2">
-                <Icon name="Briefcase" size={20} color="white" />
-              </div>
-              <span className="text-xl font-display font-bold text-gray-900">JobPortal</span>
+              <img src={logo} width={170} />
             </Link>
           </div>
 
@@ -48,8 +46,9 @@ const Header = () => {
             <Link
               to="/home-page"
               className={`text-sm font-medium transition-colors duration-200 ${
-                isActiveRoute('/home-page')
-                  ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                isActiveRoute("/home-page")
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Home
@@ -57,8 +56,9 @@ const Header = () => {
             <Link
               to="/search-results-page"
               className={`text-sm font-medium transition-colors duration-200 ${
-                isActiveRoute('/search-results-page')
-                  ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                isActiveRoute("/search-results-page")
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Jobs
@@ -66,8 +66,9 @@ const Header = () => {
             <Link
               to="/job-details-page"
               className={`text-sm font-medium transition-colors duration-200 ${
-                isActiveRoute('/job-details-page')
-                  ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                isActiveRoute("/job-details-page")
+                  ? "text-primary"
+                  : "text-gray-600 hover:text-gray-900"
               }`}
             >
               Companies
@@ -135,8 +136,9 @@ const Header = () => {
               <Link
                 to="/home-page"
                 className={`text-base font-medium ${
-                  isActiveRoute('/home-page')
-                    ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                  isActiveRoute("/home-page")
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -145,8 +147,9 @@ const Header = () => {
               <Link
                 to="/search-results-page"
                 className={`text-base font-medium ${
-                  isActiveRoute('/search-results-page')
-                    ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                  isActiveRoute("/search-results-page")
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -155,14 +158,15 @@ const Header = () => {
               <Link
                 to="/job-details-page"
                 className={`text-base font-medium ${
-                  isActiveRoute('/job-details-page')
-                    ? 'text-primary' :'text-gray-600 hover:text-gray-900'
+                  isActiveRoute("/job-details-page")
+                    ? "text-primary"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Companies
               </Link>
-              
+
               {isLoggedIn ? (
                 <div className="flex flex-col space-y-4 pt-4 border-t border-gray-200">
                   <button className="flex items-center space-x-2 text-gray-600 hover:text-gray-900">

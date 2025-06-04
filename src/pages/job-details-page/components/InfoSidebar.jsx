@@ -1,34 +1,34 @@
-import React from 'react';
-import Icon from '../../../components/AppIcon';
-import ActionButton from './ActionButton';
+import React from "react";
+import Icon from "../../../components/AppIcon";
+import ActionButton from "./ActionButton";
 
 const InfoSidebar = ({ jobData, onSaveJob, isJobSaved, onApplyNow }) => {
   const jobDetails = [
     {
-      icon: 'DollarSign',
-      label: 'Salary Range',
-      value: jobData.salary
+      icon: "DollarSign",
+      label: "Salary Range",
+      value: jobData?.salary,
     },
     {
-      icon: 'Briefcase',
-      label: 'Experience',
-      value: jobData.experience
+      icon: "Briefcase",
+      label: "Experience",
+      value: jobData?.experience || "3+ years",
     },
     {
-      icon: 'Clock',
-      label: 'Employment Type',
-      value: jobData.employmentType
+      icon: "Clock",
+      label: "Employment Type",
+      value: jobData?.type,
     },
     {
-      icon: 'MapPin',
-      label: 'Location',
-      value: jobData.location
+      icon: "MapPin",
+      label: "Location",
+      value: jobData?.location,
     },
     {
-      icon: 'Wifi',
-      label: 'Work Style',
-      value: jobData.remote ? 'Remote Friendly' : 'On-site'
-    }
+      icon: "Wifi",
+      label: "Work Style",
+      value: jobData?.isRemote ? "Remote Friendly" : "On-site",
+    },
   ];
 
   return (
@@ -51,9 +51,11 @@ const InfoSidebar = ({ jobData, onSaveJob, isJobSaved, onApplyNow }) => {
             variant="secondary"
             onClick={onSaveJob}
             icon="Heart"
-            className={`w-full ${isJobSaved ? 'text-red-600 border-red-600' : ''}`}
+            className={`w-full ${
+              isJobSaved ? "text-red-600 border-red-600" : ""
+            }`}
           >
-            {isJobSaved ? 'Saved' : 'Save Job'}
+            {isJobSaved ? "Saved" : "Save Job"}
           </ActionButton>
         </div>
       </div>
@@ -88,12 +90,14 @@ const InfoSidebar = ({ jobData, onSaveJob, isJobSaved, onApplyNow }) => {
           Key Requirements
         </h3>
         <div className="space-y-3">
-          {jobData.requirements.map((requirement, index) => (
+          {jobData?.requirements?.map((requirement, index) => (
             <div key={index} className="flex items-start">
-              <Icon name="Check" size={16} className="text-success mr-2 mt-0.5 flex-shrink-0" />
-              <span className="text-sm text-text-secondary">
-                {requirement}
-              </span>
+              <Icon
+                name="Check"
+                size={16}
+                className="text-success mr-2 mt-0.5 flex-shrink-0"
+              />
+              <span className="text-sm text-text-secondary">{requirement}</span>
             </div>
           ))}
         </div>
@@ -105,12 +109,19 @@ const InfoSidebar = ({ jobData, onSaveJob, isJobSaved, onApplyNow }) => {
           Benefits & Perks
         </h3>
         <div className="space-y-3">
-          {jobData.benefits.map((benefit, index) => (
+          {[
+            "Competitive salary",
+            "Health insurance",
+            "Remote work options",
+            "Professional development budget",
+          ].map((benefit, index) => (
             <div key={index} className="flex items-start">
-              <Icon name="Gift" size={16} className="text-primary mr-2 mt-0.5 flex-shrink-0" />
-              <span className="text-sm text-text-secondary">
-                {benefit}
-              </span>
+              <Icon
+                name="Gift"
+                size={16}
+                className="text-primary mr-2 mt-0.5 flex-shrink-0"
+              />
+              <span className="text-sm text-text-secondary">{benefit}</span>
             </div>
           ))}
         </div>

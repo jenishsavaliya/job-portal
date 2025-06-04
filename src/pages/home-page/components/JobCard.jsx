@@ -9,7 +9,7 @@ const JobCard = ({ job, onSave }) => {
     const now = new Date();
     const diffTime = Math.abs(now - date);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
+
     if (diffDays === 1) return "1 day ago";
     if (diffDays < 7) return `${diffDays} days ago`;
     if (diffDays < 30) return `${Math.ceil(diffDays / 7)} weeks ago`;
@@ -32,10 +32,12 @@ const JobCard = ({ job, onSave }) => {
             <h3 className="font-semibold text-text-primary group-hover:text-primary transition-colors duration-200 truncate">
               {job.title}
             </h3>
-            <p className="text-sm text-text-secondary truncate">{job.company}</p>
+            <p className="text-sm text-text-secondary truncate">
+              {job.company}
+            </p>
           </div>
         </div>
-        
+
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -43,11 +45,16 @@ const JobCard = ({ job, onSave }) => {
           }}
           className={`p-2 rounded-lg transition-colors duration-200 ${
             job.isSaved
-              ? 'text-primary bg-primary-light' :'text-text-tertiary hover:text-primary hover:bg-primary-light'
+              ? "text-primary bg-primary-light"
+              : "text-text-tertiary hover:text-primary hover:bg-primary-light"
           }`}
-          aria-label={job.isSaved ? 'Remove from saved jobs' : 'Save job'}
+          aria-label={job.isSaved ? "Remove from saved jobs" : "Save job"}
         >
-          <Icon name={job.isSaved ? "Heart" : "Heart"} size={20} fill={job.isSaved ? "currentColor" : "none"} />
+          <Icon
+            name={job.isSaved ? "Heart" : "Heart"}
+            size={20}
+            fill={job.isSaved ? "currentColor" : "none"}
+          />
         </button>
       </div>
 
@@ -85,9 +92,9 @@ const JobCard = ({ job, onSave }) => {
         <span className="text-xs text-text-tertiary">
           {formatDate(job.postedDate)}
         </span>
-        
         <Link
           to={`/job-details-page?id=${job.id}`}
+          state={{ job }}
           className="text-sm font-medium text-primary hover:text-primary-hover transition-colors duration-200 flex items-center space-x-1"
         >
           <span>View Details</span>

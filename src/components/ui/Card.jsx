@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import Icon from '../AppIcon';
-import Image from '../AppImage';
-import Button from './Button';
+import Icon from "../AppIcon";
+import Image from "../AppImage";
+import Button from "./Button";
 
 const Card = ({
-  variant = 'default',
-  className = '',
+  variant = "default",
+  className = "",
   children,
   onClick,
   ...props
 }) => {
-  const baseClasses = 'bg-white rounded-lg border border-gray-200 transition-all duration-200 hover:shadow-md';
-  
+  const baseClasses =
+    "bg-white rounded-lg border border-gray-200 transition-all duration-200 hover:shadow-md";
+
   const variantClasses = {
-    default: 'p-6',
-    compact: 'p-4',
-    featured: 'p-6 border-primary border-2 relative',
+    default: "p-6",
+    compact: "p-4",
+    featured: "p-6 border-primary border-2 relative",
   };
 
   const cardClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
-  if (variant === 'job-listing') {
-    return <JobListingCard {...props} className={className} onClick={onClick} />;
+  if (variant === "job-listing") {
+    return (
+      <JobListingCard {...props} className={className} onClick={onClick} />
+    );
   }
 
-  if (variant === 'featured-job') {
-    return <FeaturedJobCard {...props} className={className} onClick={onClick} />;
+  if (variant === "featured-job") {
+    return (
+      <FeaturedJobCard {...props} className={className} onClick={onClick} />
+    );
   }
 
-  if (variant === 'company-profile') {
-    return <CompanyProfileCard {...props} className={className} onClick={onClick} />;
+  if (variant === "company-profile") {
+    return (
+      <CompanyProfileCard {...props} className={className} onClick={onClick} />
+    );
   }
 
-  if (variant === 'filter-group') {
+  if (variant === "filter-group") {
     return <FilterGroupCard {...props} className={className} />;
   }
 
@@ -46,7 +53,7 @@ const Card = ({
 
 const JobListingCard = ({
   job = {},
-  className = '',
+  className = "",
   onClick,
   onSave,
   onApply,
@@ -54,18 +61,18 @@ const JobListingCard = ({
 }) => {
   const {
     id,
-    title = 'Software Engineer',
-    company = 'Tech Company',
-    location = 'San Francisco, CA',
-    type = 'Full-time',
-    salary = '$80,000 - $120,000',
-    description = 'We are looking for a talented software engineer to join our team...',
-    skills = ['JavaScript', 'React', 'Node.js'],
-    postedDate = '2 days ago',
+    title = "Software Engineer",
+    company = "Tech Company",
+    location = "San Francisco, CA",
+    type = "Full-time",
+    salary = "$80,000 - $120,000",
+    description = "We are looking for a talented software engineer to join our team...",
+    skills = ["JavaScript", "React", "Node.js"],
+    postedDate = "2 days ago",
     isRemote = false,
     isFeatured = false,
     companyLogo,
-    saved = false
+    saved = false,
   } = job;
 
   const handleSave = (e) => {
@@ -83,9 +90,9 @@ const JobListingCard = ({
   };
 
   return (
-    <div 
+    <div
       className={`bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-all duration-200 cursor-pointer ${
-        isFeatured ? 'border-primary border-2' : ''
+        isFeatured ? "border-primary border-2" : ""
       } ${className}`}
       onClick={onClick}
       {...props}
@@ -109,7 +116,7 @@ const JobListingCard = ({
               <Icon name="Building" size={20} className="text-gray-400" />
             </div>
           )}
-          
+
           <div className="flex-1 min-w-0">
             <h3 className="text-lg font-semibold text-gray-900 mb-1 truncate">
               {title}
@@ -135,17 +142,16 @@ const JobListingCard = ({
         <button
           onClick={handleSave}
           className={`p-2 rounded-lg transition-colors duration-200 ${
-            saved 
-              ? 'text-primary bg-primary-light' :'text-gray-400 hover:text-gray-600 hover:bg-gray-100'
+            saved
+              ? "text-primary bg-primary-light"
+              : "text-gray-400 hover:text-gray-600 hover:bg-gray-100"
           }`}
         >
           <Icon name={saved ? "Bookmark" : "BookmarkPlus"} size={20} />
         </button>
       </div>
 
-      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-        {description}
-      </p>
+      <p className="text-sm text-gray-600 mb-4 line-clamp-2">{description}</p>
 
       {salary && (
         <div className="flex items-center text-sm text-gray-700 mb-4">
@@ -165,18 +171,16 @@ const JobListingCard = ({
             </span>
           ))}
           {skills.length > 3 && (
-            <span className="text-gray-500 text-xs">+{skills.length - 3} more</span>
+            <span className="text-gray-500 text-xs">
+              +{skills.length - 3} more
+            </span>
           )}
         </div>
       )}
 
       <div className="flex items-center justify-between">
         <span className="text-xs text-gray-500">{postedDate}</span>
-        <Button
-          variant="primary"
-          size="small"
-          onClick={handleApply}
-        >
+        <Button variant="primary" size="small" onClick={handleApply}>
           Apply Now
         </Button>
       </div>
@@ -184,12 +188,7 @@ const JobListingCard = ({
   );
 };
 
-const FeaturedJobCard = ({
-  job = {},
-  className = '',
-  onClick,
-  ...props
-}) => {
+const FeaturedJobCard = ({ job = {}, className = "", onClick, ...props }) => {
   return (
     <JobListingCard
       job={{ ...job, isFeatured: true }}
@@ -202,23 +201,23 @@ const FeaturedJobCard = ({
 
 const CompanyProfileCard = ({
   company = {},
-  className = '',
+  className = "",
   onClick,
   ...props
 }) => {
   const {
-    name = 'Company Name',
+    name = "Company Name",
     logo,
-    description = 'Company description goes here...',
-    industry = 'Technology',
-    size = '100-500 employees',
-    location = 'San Francisco, CA',
+    description = "Company description goes here...",
+    industry = "Technology",
+    size = "100-500 employees",
+    location = "San Francisco, CA",
     openJobs = 5,
-    rating = 4.5
+    rating = 4.5,
   } = company;
 
   return (
-    <div 
+    <div
       className={`bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-all duration-200 cursor-pointer ${className}`}
       onClick={onClick}
       {...props}
@@ -235,7 +234,7 @@ const CompanyProfileCard = ({
             <Icon name="Building" size={24} className="text-gray-400" />
           </div>
         )}
-        
+
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900 mb-1">{name}</h3>
           <p className="text-sm text-gray-600 mb-2">{industry}</p>
@@ -252,9 +251,7 @@ const CompanyProfileCard = ({
         </div>
       </div>
 
-      <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-        {description}
-      </p>
+      <p className="text-sm text-gray-600 mb-4 line-clamp-2">{description}</p>
 
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
@@ -279,7 +276,7 @@ const FilterGroupCard = ({
   children,
   isCollapsible = true,
   defaultExpanded = true,
-  className = '',
+  className = "",
   ...props
 }) => {
   const [isExpanded, setIsExpanded] = React.useState(defaultExpanded);
@@ -291,30 +288,31 @@ const FilterGroupCard = ({
   };
 
   return (
-    <div className={`bg-white rounded-lg border border-gray-200 ${className}`} {...props}>
-      <div 
-        className={`p-4 ${isCollapsible ? 'cursor-pointer' : ''} ${
-          isCollapsible && !isExpanded ? 'border-b-0' : 'border-b border-gray-200'
+    <div
+      className={`bg-white rounded-lg border border-gray-200 ${className}`}
+      {...props}
+    >
+      <div
+        className={`p-4 ${isCollapsible ? "cursor-pointer" : ""} ${
+          isCollapsible && !isExpanded
+            ? "border-b-0"
+            : "border-b border-gray-200"
         }`}
         onClick={toggleExpanded}
       >
         <div className="flex items-center justify-between">
           <h3 className="text-sm font-medium text-gray-900">{title}</h3>
           {isCollapsible && (
-            <Icon 
-              name={isExpanded ? "ChevronUp" : "ChevronDown"} 
-              size={16} 
-              className="text-gray-400" 
+            <Icon
+              name={isExpanded ? "ChevronUp" : "ChevronDown"}
+              size={16}
+              className="text-gray-400"
             />
           )}
         </div>
       </div>
-      
-      {isExpanded && (
-        <div className="p-4 pt-0">
-          {children}
-        </div>
-      )}
+
+      {isExpanded && <div className="p-4 pt-0">{children}</div>}
     </div>
   );
 };

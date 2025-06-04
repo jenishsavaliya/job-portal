@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   /* Primary Colors */
-  --color-primary: #2563EB; /* Primary - blue-600 */
-  --color-primary-hover: #1D4ED8; /* Primary Hover - blue-700 */
-  --color-primary-light: #DBEAFE; /* Primary Light - blue-100 */
-  
+  --color-primary: #7a1b77; /* Primary - blue-600 */
+  --color-primary-hover: #7a1b77; /* Primary Hover - blue-700 */
+  --color-primary-light: #dbeafe; /* Primary Light - blue-100 */
+
   /* Neutral Colors */
-  --color-background: #FFFFFF; /* Background - white */
-  --color-surface: #F9FAFB; /* Surface - gray-50 */
-  --color-border: #E5E7EB; /* Border - gray-200 */
+  --color-background: #ffffff; /* Background - white */
+  --color-surface: #f9fafb; /* Surface - gray-50 */
+  --color-border: #e5e7eb; /* Border - gray-200 */
   --color-text-primary: #111827; /* Text Primary - gray-900 */
-  --color-text-secondary: #4B5563; /* Text Secondary - gray-600 */
-  --color-text-tertiary: #9CA3AF; /* Text Tertiary - gray-400 */
-  
+  --color-text-secondary: #4b5563; /* Text Secondary - gray-600 */
+  --color-text-tertiary: #9ca3af; /* Text Tertiary - gray-400 */
+
   /* Semantic Colors */
-  --color-success: #16A34A; /* Success - green-600 */
-  --color-warning: #F59E0B; /* Warning - amber-500 */
-  --color-error: #DC2626; /* Error - red-600 */
-  --color-info: #0EA5E9; /* Info - sky-500 */
+  --color-success: #16a34a; /* Success - green-600 */
+  --color-warning: #f59e0b; /* Warning - amber-500 */
+  --color-error: #dc2626; /* Error - red-600 */
+  --color-info: #0ea5e9; /* Info - sky-500 */
 }
 
 @layer base {
   body {
-    font-family: 'Inter', ui-sans-serif, system-ui;
+    font-family: "Inter", ui-sans-serif, system-ui;
     color: var(--color-text-primary);
     background-color: var(--color-background);
   }

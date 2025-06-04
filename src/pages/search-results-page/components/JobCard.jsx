@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
+import React from "react";
+import { Link } from "react-router-dom";
+import Icon from "../../../components/AppIcon";
+import Image from "../../../components/AppImage";
 
 const JobCard = ({ job }) => {
   const {
@@ -17,19 +17,23 @@ const JobCard = ({ job }) => {
     logo,
     tags,
     isRemote,
-    isFeatured
+    isFeatured,
   } = job;
 
   return (
-    <div className={`bg-white rounded-lg border transition-all duration-200 hover:shadow-md ${
-      isFeatured ? 'border-primary border-2' : 'border-border hover:border-primary'
-    }`}>
+    <div
+      className={`bg-white rounded-lg border transition-all duration-200 hover:shadow-md ${
+        isFeatured
+          ? "border-primary border-2"
+          : "border-border hover:border-primary"
+      }`}
+    >
       {isFeatured && (
         <div className="bg-primary text-white text-xs font-medium px-3 py-1 rounded-t-lg">
           Featured Job
         </div>
       )}
-      
+
       <div className="p-6">
         <div className="flex items-start gap-4">
           {/* Company Logo */}
@@ -49,15 +53,18 @@ const JobCard = ({ job }) => {
               <div className="flex-1">
                 <Link
                   to={`/job-details-page?id=${id}`}
+                  state={{ job }}
                   className="block group"
                 >
                   <h3 className="text-lg font-semibold text-text-primary group-hover:text-primary transition-colors duration-200 line-clamp-1">
                     {title}
                   </h3>
                 </Link>
-                
+
                 <div className="flex items-center gap-2 mt-1 mb-2">
-                  <span className="text-text-secondary font-medium">{company}</span>
+                  <span className="text-text-secondary font-medium">
+                    {company}
+                  </span>
                   <span className="text-text-tertiary">•</span>
                   <div className="flex items-center gap-1 text-text-secondary">
                     <Icon name="MapPin" size={14} />
@@ -66,7 +73,9 @@ const JobCard = ({ job }) => {
                   {isRemote && (
                     <>
                       <span className="text-text-tertiary">•</span>
-                      <span className="text-sm text-success font-medium">Remote</span>
+                      <span className="text-sm text-success font-medium">
+                        Remote
+                      </span>
                     </>
                   )}
                 </div>
@@ -122,6 +131,7 @@ const JobCard = ({ job }) => {
                 </button>
                 <Link
                   to={`/job-details-page?id=${id}`}
+                  state={{ job }}
                   className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-hover transition-colors duration-200 whitespace-nowrap"
                 >
                   View Details

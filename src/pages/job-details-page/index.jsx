@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Header from '../../components/ui/Header';
-import ActionButton from './components/ActionButton';
-import TabNavigation from './components/TabNavigation';
-import FormattedTextBlock from './components/FormattedTextBlock';
-import InfoSidebar from './components/InfoSidebar';
-import ApplicationModal from './components/ApplicationModal';
-import Icon from '../../components/AppIcon';
-import Image from '../../components/AppImage';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Header from "../../components/ui/Header";
+import ActionButton from "./components/ActionButton";
+import TabNavigation from "./components/TabNavigation";
+import FormattedTextBlock from "./components/FormattedTextBlock";
+import InfoSidebar from "./components/InfoSidebar";
+import ApplicationModal from "./components/ApplicationModal";
+import Icon from "../../components/AppIcon";
+import Image from "../../components/AppImage";
 
 const JobDetailsPage = () => {
-  const [activeTab, setActiveTab] = useState('description');
+  const location = useLocation();
+  const job = location.state?.job;
+  const [activeTab, setActiveTab] = useState("description");
   const [isLoading, setIsLoading] = useState(true);
   const [isApplicationModalOpen, setIsApplicationModalOpen] = useState(false);
   const [isJobSaved, setIsJobSaved] = useState(false);
@@ -26,7 +28,7 @@ const JobDetailsPage = () => {
 
 Our mission is to transform businesses through cutting-edge technology and exceptional user experiences. We work with Fortune 500 companies to deliver scalable, secure, and user-friendly applications that drive business growth.
 
-At TechCorp, we believe in fostering a culture of innovation, collaboration, and continuous learning. Our team consists of passionate professionals who are dedicated to pushing the boundaries of what's possible in technology.`
+At TechCorp, we believe in fostering a culture of innovation, collaboration, and continuous learning. Our team consists of passionate professionals who are dedicated to pushing the boundaries of what's possible in technology.`,
     },
     location: "San Francisco, CA",
     postedDate: "2024-01-15",
@@ -74,14 +76,14 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
       "5+ years of React.js experience",
       "Strong JavaScript and TypeScript skills",
       "Experience with modern frontend tools",
-      "Bachelor's degree preferred"
+      "Bachelor's degree preferred",
     ],
     benefits: [
       "Competitive salary",
       "Health insurance",
       "Remote work options",
-      "Professional development budget"
-    ]
+      "Professional development budget",
+    ],
   };
 
   const similarJobs = [
@@ -91,7 +93,7 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
       company: "StartupXYZ",
       location: "Remote",
       salary: "$90,000 - $120,000",
-      logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=50&h=50&fit=crop&crop=center"
+      logo: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?w=50&h=50&fit=crop&crop=center",
     },
     {
       id: 3,
@@ -99,7 +101,7 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
       company: "InnovateTech",
       location: "New York, NY",
       salary: "$110,000 - $140,000",
-      logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=50&h=50&fit=crop&crop=center"
+      logo: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=50&h=50&fit=crop&crop=center",
     },
     {
       id: 4,
@@ -107,14 +109,14 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
       company: "DigitalFlow",
       location: "Austin, TX",
       salary: "$100,000 - $130,000",
-      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=50&h=50&fit=crop&crop=center"
-    }
+      logo: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=50&h=50&fit=crop&crop=center",
+    },
   ];
 
   const tabs = [
-    { id: 'description', label: 'Job Description', icon: 'FileText' },
-    { id: 'company', label: 'Company Info', icon: 'Building' },
-    { id: 'similar', label: 'Similar Jobs', icon: 'Search' }
+    { id: "description", label: "Job Description", icon: "FileText" },
+    { id: "company", label: "Company Info", icon: "Building" },
+    { id: "similar", label: "Similar Jobs", icon: "Search" },
   ];
 
   useEffect(() => {
@@ -127,7 +129,8 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
   }, []);
 
   const handleApplyNow = () => {
-    setIsApplicationModalOpen(true);
+    // setIsApplicationModalOpen(true);
+    window.open(job?.referralLink, "_blank", "noopener,noreferrer");
   };
 
   const handleSaveJob = () => {
@@ -136,10 +139,10 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
 
@@ -185,7 +188,7 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
   return (
     <div className="min-h-screen bg-surface">
       <Header />
-      
+
       {/* Breadcrumb */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
@@ -194,11 +197,14 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
               Home
             </Link>
             <Icon name="ChevronRight" size={16} className="text-gray-400" />
-            <Link to="/search-results-page" className="text-gray-500 hover:text-gray-700">
+            <Link
+              to="/search-results-page"
+              className="text-gray-500 hover:text-gray-700"
+            >
               Jobs
             </Link>
             <Icon name="ChevronRight" size={16} className="text-gray-400" />
-            <span className="text-gray-900">{jobData.title}</span>
+            <span className="text-gray-900">{job?.title}</span>
           </nav>
         </div>
       </div>
@@ -210,29 +216,29 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
             <div className="flex items-start space-x-4 mb-4 lg:mb-0">
               <div className="flex-shrink-0">
                 <Image
-                  src={jobData.company.logo}
-                  alt={jobData.company.name}
+                  src={job?.companyLogo}
+                  alt={job?.company}
                   className="w-16 h-16 rounded-lg object-cover border border-gray-200"
                 />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl lg:text-3xl font-display font-bold text-text-primary mb-2">
-                  {jobData.title}
+                  {job?.title}
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 text-text-secondary">
                   <div className="flex items-center">
                     <Icon name="Building" size={16} className="mr-1" />
-                    <span className="font-medium">{jobData.company.name}</span>
+                    <span className="font-medium">{job?.company}</span>
                   </div>
                   <div className="flex items-center">
                     <Icon name="MapPin" size={16} className="mr-1" />
-                    <span>{jobData.location}</span>
+                    <span>{job?.location}</span>
                   </div>
                   <div className="flex items-center">
                     <Icon name="Calendar" size={16} className="mr-1" />
-                    <span>Posted {formatDate(jobData.postedDate)}</span>
+                    <span>Posted {formatDate(job?.postedDate)}</span>
                   </div>
-                  {jobData.remote && (
+                  {job?.isRemote && (
                     <div className="flex items-center">
                       <Icon name="Wifi" size={16} className="mr-1" />
                       <span>Remote</span>
@@ -245,8 +251,8 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
               <ActionButton
                 variant="secondary"
                 onClick={handleSaveJob}
-                icon={isJobSaved ? "Heart" : "Heart"}
-                className={isJobSaved ? "text-red-600 border-red-600" : ""}
+                icon={job?.isSaved ? "Heart" : "Heart"}
+                className={job?.isSaved ? "text-red-600 border-red-600" : ""}
               >
                 {isJobSaved ? "Saved" : "Save Job"}
               </ActionButton>
@@ -273,39 +279,44 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
                 activeTab={activeTab}
                 onTabChange={setActiveTab}
               />
-              
+
               <div className="p-6">
-                {activeTab === 'description' && (
-                  <FormattedTextBlock content={jobData.description} />
+                {activeTab === "description" && (
+                  <FormattedTextBlock content={job?.description} />
                 )}
-                
-                {activeTab === 'company' && (
+
+                {activeTab === "company" && (
                   <div>
                     <div className="flex items-center mb-6">
                       <Image
-                        src={jobData.company.logo}
-                        alt={jobData.company.name}
+                        src={job?.companyLogo}
+                        alt={job?.company}
                         className="w-20 h-20 rounded-lg object-cover border border-gray-200 mr-4"
                       />
                       <div>
                         <h3 className="text-2xl font-display font-bold text-text-primary mb-1">
-                          {jobData.company.name}
+                          {job?.company}
                         </h3>
-                        <p className="text-text-secondary">Technology Company</p>
+                        <p className="text-text-secondary">
+                          Technology Company
+                        </p>
                       </div>
                     </div>
-                    <FormattedTextBlock content={jobData.company.description} />
+                    <FormattedTextBlock content={job?.description} />
                   </div>
                 )}
-                
-                {activeTab === 'similar' && (
+
+                {activeTab === "similar" && (
                   <div>
                     <h3 className="text-xl font-display font-semibold text-text-primary mb-6">
                       Similar Job Opportunities
                     </h3>
                     <div className="space-y-4">
                       {similarJobs.map((job) => (
-                        <div key={job.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200">
+                        <div
+                          key={job.id}
+                          className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-200"
+                        >
                           <div className="flex items-start justify-between">
                             <div className="flex items-start space-x-3">
                               <Image
@@ -317,11 +328,21 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
                                 <h4 className="font-semibold text-text-primary hover:text-primary cursor-pointer">
                                   {job.title}
                                 </h4>
-                                <p className="text-text-secondary text-sm">{job.company}</p>
+                                <p className="text-text-secondary text-sm">
+                                  {job.company}
+                                </p>
                                 <div className="flex items-center mt-1 text-sm text-text-secondary">
-                                  <Icon name="MapPin" size={14} className="mr-1" />
+                                  <Icon
+                                    name="MapPin"
+                                    size={14}
+                                    className="mr-1"
+                                  />
                                   <span className="mr-4">{job.location}</span>
-                                  <Icon name="DollarSign" size={14} className="mr-1" />
+                                  <Icon
+                                    name="DollarSign"
+                                    size={14}
+                                    className="mr-1"
+                                  />
                                   <span>{job.salary}</span>
                                 </div>
                               </div>
@@ -342,7 +363,7 @@ At TechCorp, we believe in fostering a culture of innovation, collaboration, and
           {/* Sidebar */}
           <div className="lg:col-span-1 order-1 lg:order-2">
             <InfoSidebar
-              jobData={jobData}
+              jobData={job}
               onSaveJob={handleSaveJob}
               isJobSaved={isJobSaved}
               onApplyNow={handleApplyNow}

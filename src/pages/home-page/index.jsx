@@ -7,6 +7,7 @@ import JobCard from "./components/JobCard";
 import Pagination from "./components/Pagination";
 import Icon from "components/AppIcon";
 import mockJobs from "../../jsonData/jobs.json";
+import logo from "../../assests/images/logo.png";
 
 const HomePage = () => {
   const [jobs, setJobs] = useState([]);
@@ -198,12 +199,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-2">
-                  <Icon name="Briefcase" size={20} color="white" />
-                </div>
-                <span className="text-xl font-display font-bold text-text-primary">
-                  JobPortal
-                </span>
+                <img src={logo} width={170} />
               </div>
               <p className="text-text-secondary mb-4 max-w-md">
                 Connecting talented professionals with amazing opportunities
@@ -308,7 +304,7 @@ const HomePage = () => {
 
           <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-text-secondary text-sm">
-              © {new Date().getFullYear()} JobPortal. All rights reserved.
+              © {new Date().getFullYear()} Stifons. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
